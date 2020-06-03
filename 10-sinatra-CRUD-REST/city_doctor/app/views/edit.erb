@@ -1,0 +1,12 @@
+<h1>Edit Doc</h1>
+
+<form action="/doctors/<%= @doctor.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH" id="hidden">
+
+  <input type="text" name="doctor[name]" placeholder="Enter Name" value="<%= @doctor.name %>">
+  <input type="text" name="doctor[skill]" placeholder="Enter Skill" value="<%= @doctor.skill %>">
+  <input type="text" name="doctor[img_url]" placeholder="Enter Img URL" value="<%= @doctor.img_url %>">
+  <input type="number" name="doctor[years_experience]" placeholder="Enter Experience" value="<%= @doctor.years_experience %>">
+
+  <input type="submit" value="Kablam">
+</form>

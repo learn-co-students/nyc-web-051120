@@ -6,3 +6,8 @@
 
 
 <a href="/doctors"> INDEX </a>
+
+<form action="/doctors/<%= @doctor.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE">
+</form>
