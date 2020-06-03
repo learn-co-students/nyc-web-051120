@@ -1,0 +1,9 @@
+<h1>Index Page</h1>
+
+<% @doctors.each do |doctor| %>
+  <p><a href="/doctors/<%= doctor.id %>"><%= doctor.name %></a></p>
+<% end %>
+
+
+
+
