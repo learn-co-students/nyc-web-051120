@@ -1,0 +1,11 @@
+<h1>SINGS!!!</h1>
+
+
+<% @signs.each do |sign| %>
+  <br>
+  <%= link_to sign.name, sign_path(sign.id) %>
+  <br>
+  <%= link_to sign.name, sign_path(sign) %>
+  <br>
+  <%= link_to sign.name, sign %>
+<% end %>
