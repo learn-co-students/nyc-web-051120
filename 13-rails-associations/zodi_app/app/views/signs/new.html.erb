@@ -1,0 +1,17 @@
+<h1>Create New Sign</h1>
+
+<%= form_for @sign do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :element %>
+  <%= f.text_field :element %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+  <%= f.submit %>
+<% end %>

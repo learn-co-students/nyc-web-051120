@@ -1,0 +1,21 @@
+<h1>Show Page</h1>
+
+<h1><%= @sign.name %></h1>
+<p><%= @sign.date %></p>
+<p><%= @sign.element %></p>
+
+<h3>All Users With Sign</h3>
+
+<% @sign.users.each do |user|  %>
+  <p><%= user.name %></p>
+<% end %>
+
+
+<%= link_to "INDEX", signs_path %>
+<br>
+                    <%# /signs/:id/edit %>
+<%= link_to "EDIT",  edit_sign_path(@sign) %>
+
+                      <%# /signs/:id %>
+<%= button_to "DELETE", sign_path(@sign), method: :delete %>
+
