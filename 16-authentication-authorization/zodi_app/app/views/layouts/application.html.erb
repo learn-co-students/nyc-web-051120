@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZodiApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+      <ul>
+        <li><%= link_to 'User Home', users_path %></li>
+        <li><%= link_to 'Sign Home', signs_path %></li>
+        <li><%= link_to 'New Sign', new_sign_path %></li>
+
+        <% if @current_user %>
+          <li class='right'> Welcome <%=  @current_user.name %></li>                    
+          <li class='right'><%= link_to "Log-Out", logout_path, method: :delete %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'Login', new_login_path %></li>
+        <% end %>
+      </ul>
+
+    <%= yield %>
+  </body>
+</html>
