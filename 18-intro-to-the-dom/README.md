@@ -78,45 +78,49 @@
 - `document.getElementById`
   - get the `div` with the id `movie-container`
 
-```javascript
+  - return the first element from the document that matches the id string
 
+```javascript
+let container = document.getElementById("movie-container")
 ```
 
 - `node.getElementsByTagName`
   - get the Matrix `li` element
 
-
-
-```javascript
-
-```
+  - returns all the child elements of the node that are of that tag type
 
 ```javascript
-
+let movies = document.getElementsByTagName("li")[1]
 ```
+
 
 - `node.getElementsByClassName`
   - get all the `li` elements with the class `movie`
 
+  - returns all the child elements of the node that have that class
 
 ```javascript
-
+let movies = document.getElementsByClassName("movie")
 ```
 
 - `node.querySelector`
   - get the up-vote `button` from within the jaws `li`
 
+  - returns the first node that matches the css selector criteria
 
 ```javascript
-
+let list = document.querySelector("ul")
+let button = list.querySelector(".up-vote")
 ```
   
 - `node.querySelectorAll`
   - get the all the `up-vote` elements
   
+  - returns all the nodes that match the css selector criteria
+
 
 ```javascript
-
+let buttons = document.querySelectorAll("up-vote")
 ```
 
   - We can also combine selectors for more specificity:
@@ -129,19 +133,26 @@
 #### UPDATE:
 - replace the welcome image with a different picture
 
-* get the image from the DOM
-* change the `src` attributes to point to a new picture
+- "https://i.ytimg.com/vi/aaqzPMOd_1g/maxresdefault.jpg"
+
+1. get the image from the DOM and save it in a variable
+2. manipulate the image to display a different picture -> change the src property
 
 ```javascript
-
+let image = document.getElementById('welcome-image')
+image.src = "https://i.ytimg.com/vi/aaqzPMOd_1g/maxresdefault.jpg"
 ```
 ---
 
 #### DELETE:
 - remove the Jaws movie
 
-```javascript
+1. get the jaws movie li from the DOM
+2. remove it from the DOM (Somehow...)
 
+```javascript
+let jaws = document.querySelector('li')
+jaws.remove()
 ```
 
 ---
