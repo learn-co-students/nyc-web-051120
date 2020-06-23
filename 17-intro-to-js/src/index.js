@@ -68,11 +68,27 @@ console.log("Welcome to Mod 3")
 
  **Functions
 
+  def say_hi(name)
+    puts "Hi there #{name}!"
+  end
+
+  say_hi("steven") => "Hi there steven!"
 
 */
 
 // function declaration, named function
 
+function sayHi(name){
+  console.log(`Hey there ${name}!`)
+}
+
 
 // function expression
 
+let sayHello = function(name){
+  console.log(`Hello there ${name}!!`)
+}
+
+let sayHowdy = function(){
+  console.log("HOWDY!!!")
+}
