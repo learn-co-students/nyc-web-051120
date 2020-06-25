@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function(e){
     movieList.append(movieLi)
   }
   
-  function clickeHandler(){
+  function clickHandler(){
     document.addEventListener("click", function(e){
       if(e.target.matches(".up-vote")){
         const button = e.target
@@ -139,6 +139,35 @@ document.addEventListener('DOMContentLoaded', function(e){
     })
   }
   
+  const submitHandler = () => {
+    document.addEventListener('submit', e => {
+      e.preventDefault()
+      // √get the data out of the form
+      // √build an object with that data
+      // √render that data to the DOM as a movie
+
+      const form = e.target
+      
+      const title = form.title.value
+      const genre = form.genre.value
+      const year = form.year.value
+      const imageUrl = form.imageUrl.value
+      const score = 0
+
+      const movieObj = {
+        title: title,
+        genre: genre,
+        year: year,
+        imageUrl: imageUrl,
+        score: score
+      }
+
+      const movieLi = createMovieLi(movieObj)
+      renderMovie(movieLi)
+      form.reset()
+    })
+  }
+  
   // const goonieLi = createMovieLi(goonies)
   // renderMovie(goonieLi)
 
@@ -153,7 +182,8 @@ document.addEventListener('DOMContentLoaded', function(e){
   }
   
   renderMovies(movies)
-  clickeHandler()
+  clickHandler()
+  submitHandler()
 })
 
 /*
@@ -165,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 √When I click "Hide Form", the form disappears and the text in the button changes back to "Show Form"
 
-When I click "Add Movie" (submit) the movie appears on the DOM as an li.
+√When I click "Add Movie" (submit) the movie appears on the DOM as an li.
 
 
 */
