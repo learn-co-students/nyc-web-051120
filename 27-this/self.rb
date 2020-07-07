@@ -11,7 +11,7 @@ class Person
     "Hi, my name is #{self.name}"
   end
 
-  def Person.say_class_name
+  def self.say_class_name
     "Hi, I am of class #{self.name}"
   end
 end
