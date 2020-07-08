@@ -42,8 +42,8 @@ function sayNameLocationTime(location, time){
 }
 
 // these will immediately invoke the function with the thisArg and the parameters that you pass in
-sayNameLocationTime.call(steven, "LIC", "2:51")
-sayNameLocationTime.apply(steven, ["LIC", "2:52"])
+// sayNameLocationTime.call(steven, "LIC", "2:51")
+// sayNameLocationTime.apply(steven, ["LIC", "2:52"])
 
 sayNameLocationTime.bind(steven, "LIC", "3:05")
 
@@ -55,6 +55,18 @@ sayNameLocationTime.bind(steven, "LIC", "3:05")
 
 // arrow functions DO NOT get their own `this`, they get it from the parent context
 // cannot use `call`, `apply`, or `bind` with arrow function
+// arrow functions are great candidates to be used inside objects if you need to reference the calling object
+// the behavior of arrow functions with regard to this is more predictable
+
+
+let otherDog = {
+  name: "Perky",
+  whatIsThis: this,
+  sayMyName: function(){ console.log(`My name is ${this.name}`)},
+  sayMyNameArrow: () => { console.log(`My name is ${this.name}`)},
+  traditionalThis: function() { console.log('Traditional this: \n', this) },
+  arrowThis: () => console.log('Arrow this: \n', this)
+}
 
 
 
@@ -84,12 +96,3 @@ sayNameLocationTime.bind(steven, "LIC", "3:05")
 
 
 
-
-
-
-// let perky = {
-//   name: "Perky",
-//   whatIsThis: this,
-//   traditionalThis: function() { return this },
-//   arrowThis: () => this
-// }
