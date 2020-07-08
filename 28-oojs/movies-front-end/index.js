@@ -1,41 +1,17 @@
-console.log("fetching is fun!")
+console.log("objects are cool I guess")
 
 /*-----------------------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', function(e){
   const baseUrl = "http://localhost:3000/api/v1/movies"
   const movieList = document.getElementById('movie-list')
-  
-  function createMovieLi(movie){
-    const movieLi = document.createElement('li')
-    movieLi.className = "movie"
-    movieLi.dataset.id = movie.id
-  
-    movieLi.innerHTML = `
-      <h3>${movie.title}</h3>
-      <img alt=""
-          src="${movie.imageUrl}" />
-      <h4>Year: ${movie.year}</h4>
-      <h4>Genre: ${movie.genre}</h4>
-      <h4>Score: <span>${movie.score}</span> </h4>
-      <button class="up-vote">Up Vote</button>
-      <button>Down Vote</button>
-      <button>&times;</button>
-    `
-  
-    return movieLi
-  }
-  
-  function renderMovie(movieLi){
-    movieList.prepend(movieLi)
-  }
+
   
   function clickHandler(){
     document.addEventListener("click", function(e){
       if(e.target.matches(".up-vote")){
         const button = e.target
-        const id = button.parentNode.dataset.id
-
+        const id = parseInt(button.parentNode.dataset.id)
 
         const scoreSpan = button.parentNode.querySelector("span")
         const newScore = parseInt(scoreSpan.textContent) + 1
@@ -50,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function(e){
         })
         .then(response => response.json())
         .then(movieObj => {
-          scoreSpan.textContent = newScore
+          // scoreSpan.textContent = newScore
+          const movie = Movie.find(id)
+          movie.increaseScore()
         })
 
       } else if(e.target.textContent === "×"){
@@ -58,13 +36,19 @@ document.addEventListener('DOMContentLoaded', function(e){
         const movieLi = e.target.parentNode
         const id = movieLi.dataset.id
 
-        movieLi.remove() // optimistic rendering
+        // movieLi.remove() // optimistic rendering
 
         fetch(`${baseUrl}/${id}`,{
           method: "DELETE"
         })
         .then(response => response.json())
-        .then(console.log)
+        .then(() => {
+          // instantiate a movie
+          // call movie.remove
+
+          const movie = Movie.find(id)
+          movie.remove()
+        })
         
       } else if(e.target.matches("#show-form")){
         const button = e.target
@@ -142,18 +126,17 @@ document.addEventListener('DOMContentLoaded', function(e){
     })
   }
   
-  const renderMovies = movieCollection => {
-    movieCollection.forEach(movieObj => {
-      const movieLi = createMovieLi(movieObj)
-      renderMovie(movieLi)
-    })
-  }
 
   const getMovies = () => {
     fetch(baseUrl)
     .then(response => response.json())
     .then(movieCollection => {
-      renderMovies(movieCollection)
+      // renderMovies(movieCollection)
+      // 1. turn each object into a proper Movie instance
+      // 2. iterate over those Movie instances and call "render" on them
+
+      const movies = Movie.instantiateMovies(movieCollection) // => rudimentary ORM
+      Movie.renderMovies(movies, movieList)
     })
     .catch(error => {
       console.log("There was an error: \n", error)
