@@ -20,15 +20,27 @@ JSX & Props
 
 ## Notes
 
+1. Can you use if/else in a render? Technically yes, effectively no. Inside of return you cannot and need to use ternary
+2. Arrow functions & binding to the class 
+
+
 Afternoon goals:
 1. Take questions!
 2. Talk component planning & hierarchy
 3. Build out our basic wireframe
 4. Events & Synthetic Events in React
     Important concepts: Reference v. Invocation, Arrow Functions and Binding, Event Pooling
-5. When you need Class components
+5. When you need Class components: State or Lifecycle Methods 
 6. State
 7. Manipulating State
+
+Features: 
+- Match Wireframe & render all info
+- When 'Select Game' is clicked, show an alert with the game's name
+- When 'Like' is clicked, increase the number shown
+- GET Fetch all games from the json-server 
+- Split the card so the front is just the name, and on click it shows the back with all of the info
+
 
 
 Before we go to discuss...
