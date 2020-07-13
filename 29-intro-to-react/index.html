@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">  
+    
+    // ReactDOM.render(whatToPut, whereToPutIt)
+
+
+    // OLD NOT GONNA USE IT ANYMORE
+    const createAffirmation = (title, message) => {
+      return (
+          <div className="affirmation-card">
+            <h1>{title}</h1>
+            <h3>{message}</h3>
+          </div>
+      )
+    }
+
+    // class notation requires **this**
+
+    // functional notation for a component 
+    const AffirmationCard = (props) => { // props is an object 
+      return (
+          <div className="affirmation-card">
+            <h1>{props.title}</h1>
+            <h3>{props.message}</h3>
+            { props.sentTo ? props.sentTo.map((recip, index) => <div key={index}> {recip} </div>) : null }
+            { /* anyArray.map(elem => ) */ }
+            { /* anyArray.map((elem, index) => ) */ }
+          </div>
+      )
+    }
+
+
+      ReactDOM.render(
+        <div>
+          <AffirmationCard title='You is!' message='You is strong! You is beautiful! You is important!' sentTo={['Christa, Nicholas, John']}/>
+          <AffirmationCard title='Believe in your self!' message='GET UP, GET OUT, GET MOTIVATED!' />
+          <AffirmationCard title="Coders" message="Build the coolest things" />
+          <AffirmationCard title="sunshine" message="it's finally sunny today" /> 
+          { /* createAffirmation('You is!', 'You is strong! You is beautiful! You is important!') */}
+          { /* createAffirmation(, ) */}
+        </div>
+        , 
+        document.getElementById('root'))
+
+    </script>
+  </body>
+</html>
