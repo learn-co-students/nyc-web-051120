@@ -111,3 +111,17 @@ After we get through Forms labs and lecture, come back to this to practice those
 
 ## Notes on Future Labs
 - In this lab, we provided support like `onClick={null /* Put your click handler here */}`. We will not provide those kinds of guides in the future. You'll have to decide which element needs the event handler. 
+
+
+
+
+### Lecture Notes!
+- state vs. props and when to use state?
+    - anytime there's some data that you need your frontend to hold/save/track/manage
+    - if it doesn't exist anywhere else in your app state already
+    - ex: any data you fetch, stuff like "likes" from this application (not in the DB, frontend tracking)
+- if you need to change something... do it. especially functional to class components 
+    - if a component needs state you HAVE TO change it to class
+
+Issues / Questions from Pairing
+- General format of CC? Close to it 
