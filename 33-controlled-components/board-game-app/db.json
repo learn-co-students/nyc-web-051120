@@ -1,75 +1,112 @@
-{ "games": [
+{
+  "games": [
     {
-        "id": 1,
-        "name": "Exploding Kittens",
-        "minAge": 7,
-        "minPlayers": 2,
-        "maxPlayers": 5,
-        "isCollaborative": false,
-        "likes": 0
+      "id": 1,
+      "name": "Exploding Kittens",
+      "minAge": 7,
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "isCollaborative": false,
+      "likes": 0
     },
     {
-        "id": 2,
-        "name": "Cards Against Humanity",
-        "minAge": 18,
-        "minPlayers": 2,
-        "maxPlayers": 8,
-        "isCollaborative": false,
-        "likes": 0
+      "id": 2,
+      "name": "Cards Against Humanity",
+      "minAge": 18,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "isCollaborative": false,
+      "likes": 0
     },
     {
-        "id": 3,
-        "name": "Catan",
-        "minAge": 10,
-        "minPlayers": 3,
-        "maxPlayers": 6,
-        "isCollaborative": false,
-        "likes": 0
+      "id": 3,
+      "name": "Catan",
+      "minAge": 10,
+      "minPlayers": 3,
+      "maxPlayers": 6,
+      "isCollaborative": false,
+      "likes": 0
     },
     {
-        "id": 4,
-        "name": "Dominion",
-        "minAge": 10,
-        "minPlayers": 2,
-        "maxPlayers": 4,
-        "isCollaborative": false,
-        "likes": 0
+      "id": 4,
+      "name": "Dominion",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "isCollaborative": false,
+      "likes": 0
     },
     {
-        "id": 5,
-        "name": "Beyond Balderdash",
-        "minAge": 10,
-        "minPlayers": 3,
-        "maxPlayers": 10,
-        "isCollaborative": false,
-        "likes": 0
+      "id": 5,
+      "name": "Beyond Balderdash",
+      "minAge": 10,
+      "minPlayers": 3,
+      "maxPlayers": 10,
+      "isCollaborative": false,
+      "likes": 0
     },
     {
-        "id": 6,
-        "name": "Forbidden Island",
-        "minAge": 10,
-        "minPlayers": 2,
-        "maxPlayers": 4,
-        "isCollaborative": true,
-        "likes": 0
+      "id": 6,
+      "name": "Forbidden Island",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "isCollaborative": true,
+      "likes": 0
     },
     {
-        "id": 7,
-        "name": "Forbidden Desert",
-        "minAge": 10,
-        "minPlayers": 2,
-        "maxPlayers": 5,
-        "isCollaborative": true,
-        "likes": 0
+      "id": 7,
+      "name": "Forbidden Desert",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "isCollaborative": true,
+      "likes": 0
     },
     {
-        "id": 8,
-        "name": "Code Names",
-        "minAge": 14,
-        "minPlayers": 2,
-        "maxPlayers": 8,
-        "isCollaborative": true,
-        "likes": 0
+      "id": 8,
+      "name": "Code Names",
+      "minAge": 14,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "isCollaborative": true,
+      "likes": 0
+    },
+    {
+      "name": "Survive",
+      "minAge": "12",
+      "minPlayers": "2",
+      "maxPlayers": "8",
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 9
+    },
+    {
+      "name": "Pandemic",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 10
+    },
+    {
+      "name": "Minecraft",
+      "minAge": 3,
+      "minPlayers": 1,
+      "maxPlayers": 2,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 11
+    },
+    {
+      "name": "codenames duet",
+      "minAge": 12,
+      "minPlayers": 2,
+      "maxPlayers": 2,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 12
     }
-]
+  ]
 }
