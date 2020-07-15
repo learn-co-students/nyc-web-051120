@@ -7,6 +7,10 @@
 - DELETE: Delete a Review
 
 - POST: Post a new Review
+    - where should this code live?
+    - make a *FULLY CONTROLLED FORM*
+    - make fetch happen
+    - update the frontend after the POST fetch (no refresh, no GET requests)
 - GET: ...?
 
 
