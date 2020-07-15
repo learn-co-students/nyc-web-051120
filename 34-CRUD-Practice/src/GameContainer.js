@@ -13,6 +13,30 @@ class GameContainer extends React.Component {
         // some true / false to indicate whether we show the form and the index page
     }
 
+    removeReview = reviewId => {
+        fetch(`http://localhost:3000/reviews/${reviewId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(() => {
+                // update the games array 
+                let newGameArray = this.state.games.map(game => {
+                    if(game.id === this.state.currentGame){
+                        let newReviews = game.reviews.filter(review => review.id !== reviewId)
+                        return { ...game, reviews: newReviews }
+                        // return the object with all the same info EXCEPT the one review removed
+                    }
+                    return game
+                })
+                this.setState({ games: newGameArray })
+                // and we have the id 
+            })
+    }
+
     updateLikes = (id, likes) => {
         fetch(`http://localhost:3000/games/${id}`, {
             method: 'PATCH',
@@ -106,7 +130,10 @@ class GameContainer extends React.Component {
             <div id="game-container">
                 {
                     this.state.games.length && this.state.currentGame 
-                        ? <GamePage {...chosenGame} selectGame={this.selectGame}/> 
+                        ? <GamePage 
+                            {...chosenGame} 
+                            selectGame={this.selectGame}
+                            removeReview={this.removeReview}/> 
                         : this.renderIndexPage()
                 }
             </div>

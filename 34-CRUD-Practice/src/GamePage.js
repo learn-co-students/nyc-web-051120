@@ -1,7 +1,7 @@
 import React from 'react'
 
 const GamePage = props => {
-    const {name, minAge, minPlayers, maxPlayers, likes, image, selectGame} = props
+    const {name, minAge, minPlayers, maxPlayers, likes, image, selectGame, removeReview} = props
 
     return (
         <div className="game-page">
@@ -16,7 +16,12 @@ const GamePage = props => {
             <div className="game-reviews">
                 <h3>Reviews</h3>
                 <ul>
-                    {props.reviews.map(review => <li key={review.id}>{review.content}</li>)}
+                    {props.reviews.map(review => (
+                    <li key={review.id}>
+                        {review.content}
+                        <span onClick={() => removeReview(review.id)}>🗑</span>
+                    </li>)
+                    )}
                 </ul>
             </div>
         </div>
