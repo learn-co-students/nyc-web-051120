@@ -1,7 +1,7 @@
 import React from 'react'
 
 const GamePage = props => {
-    const {name, minAge, minPlayers, maxPlayers, likes, image} = props
+    const {name, minAge, minPlayers, maxPlayers, likes, image, selectGame} = props
 
     return (
         <div className="game-page">
@@ -11,7 +11,7 @@ const GamePage = props => {
                 <div>{minAge}+ years old</div>
                 <div>{minPlayers} - {maxPlayers} players</div>
                 <button onClick={null /** TODO: a new behavior is needed here */}>{likes}❤️</button>
-                <button onClick={null /** TODO: a new behavior is needed here */}>Go Back</button>
+                <button onClick={() => selectGame(null)}>Go Back</button>
             </div>
             <div className="game-reviews">
                 <h3>Reviews</h3>

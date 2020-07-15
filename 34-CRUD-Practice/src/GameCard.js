@@ -3,7 +3,7 @@ import React from 'react';
 class GameCard extends React.Component {
 
     render() {
-        const { name, minAge, minPlayers, maxPlayers, isCollaborative, likes } = this.props
+        const { name, minAge, minPlayers, maxPlayers, isCollaborative, likes, id, selectGame, updateLikes } = this.props
 
         return (
             <div className="game-card" >
@@ -11,8 +11,8 @@ class GameCard extends React.Component {
                 <div>{isCollaborative ? "Collaborative" : "Competitive"}</div>
                 <div>{minAge}+ years old</div>
                 <div>{minPlayers} - {maxPlayers} players</div>
-                <button onClick={null /** TODO: a new behavior is needed here */}>{likes}❤️</button>
-                <button onClick={null /** TODO: a new behavior is needed here */}>Select Game</button>
+                <button onClick={() => updateLikes(id, likes)}>{likes}❤️</button>
+                <button onClick={() => selectGame(id)}>Select Game</button>
             </div>
         )
     }
