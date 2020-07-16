@@ -8,6 +8,24 @@ Component Lifecycle Methods
 
 ## Lecture Notes
 
+## componentDidMount (GONNA USE ALL THE TIME)
+- occurs: right after the component is on the screen
+- use cases:
+    loading data
+    subscribing to a websocket (ie slack messages)
+    setting intervals 
+
+
+## componentDidUpdate(prevProps, prevState) (BE CAREFUL)
+- occurs: AFTER a re-render 
+- use cases: anything where you need to compare some prevProps and currentProps or prevState and currentState
+- BEWARE **** 
+
+## componentWillUnmount 
+- occurs: RIGHT BEFORE the component comes off of the screen 
+- use cases: clean up clean up errybody errywhere, auto-save 
+
+
 [React Spinner Loader](https://www.npmjs.com/package/react-loader-spinner)
 
 ### Mounting (Birth)
