@@ -1,0 +1,136 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "name": "Exploding Kittens",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71UUDAPpKWL._AC_SX425_.jpg",
+      "minAge": 7,
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "isCollaborative": false,
+      "likes": 2
+    },
+    {
+      "id": 2,
+      "name": "Cards Against Humanity",
+      "image": "https://m.media-amazon.com/images/I/81oH7nG6bGL._AC_SS350_.jpg",
+      "minAge": 18,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "isCollaborative": false,
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "Catan",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81G3u55HEHL._AC_SX679_.jpg",
+      "minAge": 10,
+      "minPlayers": 3,
+      "maxPlayers": 6,
+      "isCollaborative": false,
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Dominion",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9152Ik8HZ5L._AC_SL1500_.jpg",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "isCollaborative": false,
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Beyond Balderdash",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91VikYTSnkL._AC_SL1500_.jpg",
+      "minAge": 10,
+      "minPlayers": 3,
+      "maxPlayers": 10,
+      "isCollaborative": false,
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "Forbidden Island",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71EQcvslvBL._AC_SL1000_.jpg",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "isCollaborative": true,
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "name": "Forbidden Desert",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61MY3IrWbuL._AC_SL1024_.jpg",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "isCollaborative": true,
+      "likes": 0
+    },
+    {
+      "id": 8,
+      "name": "Code Names",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ZHkM7fHwL._AC_SY741_.jpg",
+      "minAge": 14,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "isCollaborative": true,
+      "likes": 0
+    },
+    {
+      "name": "Survive",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/914ODZ-MIlL._AC_SY450_.jpg",
+      "minAge": 12,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 9
+    },
+    {
+      "name": "Pandemic",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/814F5EyoMoL._AC_SL1500_.jpg",
+      "minAge": 10,
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 10
+    },
+    {
+      "name": "Minecraft",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71dIHv1zh7L._SL1500_.jpg",
+      "minAge": 3,
+      "minPlayers": 1,
+      "maxPlayers": 2,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 11
+    },
+    {
+      "name": "codenames duet",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61WLyCUpxhL._AC_SY679_.jpg",
+      "minAge": 12,
+      "minPlayers": 2,
+      "maxPlayers": 2,
+      "likes": 0,
+      "isCollaborative": false,
+      "id": 12
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "content": "My nieces and nephews love it... until I demolish them with my undeniable exploding kitten mastery!",
+      "gameId": 1
+    },
+    {
+      "id": 3,
+      "content": "Do not try this game until you've beaten Forbidden Island at expert level. You will end up buried under sand and unable to escape. Fair warning.",
+      "gameId": 7
+    }
+  ]
+}
