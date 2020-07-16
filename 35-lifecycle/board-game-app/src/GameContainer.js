@@ -13,6 +13,17 @@ class GameContainer extends React.Component {
         // some true / false to indicate whether we show the form and the index page
     }
 
+    componentDidMount(){
+        setTimeout(() => {
+            fetch('http://localhost:3000/games?_embed=reviews')
+                .then(res => res.json())
+                .then(data => {
+                    this.setState({ games: data })
+                })
+
+        }, 3000)
+    }
+
     removeReview = reviewId => {
         fetch(`http://localhost:3000/reviews/${reviewId}`, {
             method: 'DELETE',
@@ -70,14 +81,6 @@ class GameContainer extends React.Component {
 
     selectGame = id =>  this.setState({ currentGame: id })
 
-    getAllGames = () => {
-        fetch('http://localhost:3000/games?_embed=reviews')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ games: data })
-            })
-    }
-
     handleNewGame = (newGame) => {
         // add the new game object into the current games in state
         this.setState({ games: [...this.state.games, newGame] })
@@ -93,8 +96,9 @@ class GameContainer extends React.Component {
 
         return (
             <>
+                {/** BE A NICE DEV; if you don't have any data yet, show a loader or something */}
                 <NewGameForm handleNewGame={this.handleNewGame} />
-                <h2 onClick={this.getAllGames}>All Games</h2>
+                <h2>All Games</h2>
                 <GameFilter 
                     handleChange={this.handleChange} 
                     search={this.state.search} 
