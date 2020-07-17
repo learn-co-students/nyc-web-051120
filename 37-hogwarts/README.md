@@ -3,7 +3,12 @@
 ## React Week 1 Project
 
 ### Questions / Concerns from Pairing
-
+- State in Container, trying to pass to the Card as props and saving into state there
+  --- if something already exists somewhere in state in your WHOLE APPLICATION, do not save it somewhere else in state 
+- Filtering by greased & sorting combo
+- Extra array on state for filter / sort? 
+  --- Minimum state info; ie if we have an array of hogs on state, we don't need to have another
+- How many event handlers should we have? Separate for sort and filter? 
 
 ## Project goals:
 
@@ -11,9 +16,15 @@
 * create an index displaying all hog tiles
 * render each hog name and picture in a tile
 * show the hog's details upon a user's click
+    state for showDetails
 * filter the hogs that are greased
 * sort the hogs based on name
 * sort the hogs based on weight 
+
+
+
+
+* Tech Debt: weird behavior with the wrong cards staying details open when we switch greased
 
 * BONUS: allow users to hide hogs (not delete them, just hide them from view!)
 * BONUS: bring in pig gifs from an API
