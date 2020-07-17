@@ -4,6 +4,14 @@ import NewGameForm from './NewGameForm'
 import GamePage from './GamePage'
 import GameFilter from './GameFilter'
 
+/**
+ * 1. add the UI for the behavior (ie the delete btn)
+ * 2. define the method that will handle the event, and pick **where**
+ *      ... where do we need to update state once the action is done? 
+ * 3. FETCH (if necessary) and then... figure out your logic to update state and put in the method 
+ * 4. Pass it through my hierarchy to the component where it will be invoked and attach to correct event
+ */
+
 class GameContainer extends React.Component {
     state = {
         games: [], // update this array 
@@ -14,14 +22,26 @@ class GameContainer extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout(() => {
-            fetch('http://localhost:3000/games?_embed=reviews')
-                .then(res => res.json())
-                .then(data => {
-                    this.setState({ games: data })
-                })
+        fetch('http://localhost:3000/games?_embed=reviews')
+            .then(res => res.json())
+            .then(data => {
+                this.setState({ games: data })
+            })
+    }
 
-        }, 3000)
+    deleteGame = id => {
+        fetch(`http://localhost:3000/games/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(() => {
+                let filteredGames = this.state.games.filter(game => game.id !== id)
+                this.setState({ games: filteredGames })
+            })
     }
 
     removeReview = reviewId => {
@@ -106,6 +126,7 @@ class GameContainer extends React.Component {
                 <div id="game-list">
                     {filteredGames.map(game => 
                         <GameCard 
+                            deleteGame={this.deleteGame}
                             updateLikes={this.updateLikes}
                             selectGame={this.selectGame}
                             key={game.id}

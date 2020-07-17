@@ -23,7 +23,22 @@ class GameContainer extends React.Component {
         })
             .then(res => res.json())
             .then(() => {
-                // update the games array 
+                // {games: [
+                //     {
+                //         name: 'Exploding Kittens',
+                //         minAge: 8,
+                //         reviews: [
+                //             {id: 1, content: 'Really good game for kids'},
+                //             {id: 2, content: 'scared my little brother'}
+                //         ]
+                //     },
+                //     {
+                //         name: 'Pandemic',
+                //         minAge: 14,
+                //         reviews: []
+                //     }
+                // ]}
+
                 let newGameArray = this.state.games.map(game => {
                     if(game.id === this.state.currentGame){
                         let newReviews = game.reviews.filter(review => review.id !== reviewId)
