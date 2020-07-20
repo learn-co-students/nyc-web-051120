@@ -15,6 +15,28 @@ class App extends Component {
     // 2. frontend data integrity and SSOT
   }
 
+  /** HERE STARTS EATEN:TRUE KEY IN SUSHI OBJECT STRATEGY
+   */
+
+  eatSushiV2 = (id) => {
+    // go into this.state.sushis, find the correct one, and update its eaten: true
+
+    let newMoney = this.state.monies
+
+    let newSushi = this.state.sushi.map(sushi => {
+      if(sushi.id === id && sushi.price <= this.state.monies && !sushi.eaten){
+        newMoney -= sushi.price
+        return { ...sushi, eaten: true }
+      }
+      return sushi
+    })
+
+    this.setState({ sushi: newSushi, monies: newMoney })
+
+  }
+  /** HERE ENDS EATEN:TRUE KEY IN SUSHI OBJECT STRATEGY
+   */
+
   componentDidMount(){
     this.getSushi()
   }

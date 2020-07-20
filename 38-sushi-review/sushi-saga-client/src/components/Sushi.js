@@ -9,7 +9,7 @@ const Sushi = (props) => {
           onClick={() => eat(id, price)}>
         { 
           /* Tell me if this sushi has been eaten! */ 
-          showImg ?
+          showImg ? // 2ND STRATEGY: props.eaten 
             null
           :
             <img src={img_url} width="100%" />
