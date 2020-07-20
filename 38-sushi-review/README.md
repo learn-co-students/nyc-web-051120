@@ -68,15 +68,11 @@ Inspectors will be coming by to check that our patented Sushi Saga conveyor belt
 
 4. Clicking a sushi on a plate will eat the sushi, causing it to be removed from its plate and an empty plate to appear on the table.
 ...how? strategies!
-- boolean state in `Sushi` component ===> would require refactor 
-- set img_url to `""` to sushi when eaten 
-
-
 - eatenSushi array in state in  App component  FIRST
 - add an property `{eaten: true/false}` to each sushi object TIMEPERMITTING
-
-
-
+GOOD IDEAS BUT NOT VIABLE
+- boolean state in `Sushi` component ===> would require refactor 
+- set img_url to `""` to sushi when eaten 
 5. We need to make money! Whenever a sushi is eaten, customers should be automatically charged! Based on a budget decided by you, the developer, the amount of money remaining should go down by the cost of the sushi that was eaten. There is a spot to display this number in the `Table` component
 6. No free meals! Customers cannot eat any sushi that exceeds the amount of money remaining in their balance
 
@@ -84,8 +80,8 @@ Inspectors will be coming by to check that our patented Sushi Saga conveyor belt
 
 If and only if you have time, you may work on the following:
 
-1. SushiWallet! Add a form for customers to add more money to their balance
 2. Full rotation! When the end of the line of sushi is reached, the conveyor belt should start from the beginning. Sushi that have already been eaten should remain eaten. It would be creepy if they reappeared!
+1. SushiWallet! Add a form for customers to add more money to their balance
 3. Anything else!
 
 **Note:** If at the end of the challenge you have achieved all the functionality required but the style looks off, this is okay!

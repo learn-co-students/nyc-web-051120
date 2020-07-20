@@ -9,7 +9,14 @@ class SushiContainer extends Component {
   }
 
   updateIndex = () => {
-    this.setState(prevState => ({ startIndex: prevState.startIndex + 4 })) // implicit return of object, just wrap obj in parens
+    let newIndex = this.state.startIndex + 4 
+    this.setState({ startIndex: newIndex >= this.props.sushi.length ? 0 : newIndex })
+    // this.setState(prevState => ({ startIndex: prevState.startIndex + 4 })) // implicit return of object, just wrap obj in parens
+    // this.setState(prevState => ({ startIndex: 
+    //     prevState.startIndex + 4 > prevState.sushis.length 
+    //       ? 0 
+    //       : prevState.startIndex + 4 
+    // }))
   }
 
   render(){
