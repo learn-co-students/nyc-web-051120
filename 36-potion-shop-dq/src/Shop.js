@@ -7,7 +7,10 @@ const Shop = (props) => {
   const renderPotions = () => {
     return props.potions.map(potion => {
       return ( 
-        <PotionTile potion={potion} potionAction={props.addToInventory} divClassName="card">
+        <PotionTile 
+          potion={potion} 
+          potionAction={props.addToInventory} 
+          divClassName="card">
           <h4 className="potion-header">{potion.name}</h4>
         </PotionTile>
       )

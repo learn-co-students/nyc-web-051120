@@ -13,7 +13,10 @@ const Inventory = (props) => {
       const potion = props.potions.find(potion => potion.id === item.id)
 
        return (
-        <PotionTile potion={potion} potionAction={props.sell} divClassName="inventory-card">
+        <PotionTile 
+          potion={potion} 
+          potionAction={props.sell} 
+          divClassName="inventory-card">
           <h4>{potion.name} x {item.amount}</h4>
         </PotionTile>
       )

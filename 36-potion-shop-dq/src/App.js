@@ -102,7 +102,13 @@ class App extends React.Component {
       <div className="app">
         <div className="potion-shop">
           <Shop potions={potions}  addToInventory={this.addToInventory}/>
-          <Inventory stopShake={this.stopShake} shake={this.state.shake} gold={this.state.gold} sell={this.sell} potions={potions} inventory={this.state.inventory}/>
+          <Inventory 
+            stopShake={this.stopShake} 
+            shake={this.state.shake} 
+            gold={this.state.gold} 
+            sell={this.sell} 
+            potions={potions} 
+            inventory={this.state.inventory}/>
         </div>
       </div>
     );
