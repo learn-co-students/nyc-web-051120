@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from './helpers/styles'
 
 const GamePage = props => {
     const {name, minAge, minPlayers, maxPlayers, likes, image, selectGame, removeReview} = props
@@ -11,7 +12,7 @@ const GamePage = props => {
                 <div>{minAge}+ years old</div>
                 <div>{minPlayers} - {maxPlayers} players</div>
                 <button onClick={null /** TODO: a new behavior is needed here */}>{likes}❤️</button>
-                <button onClick={() => selectGame(null)}>Go Back</button>
+                <Button onClick={() => selectGame(null)}>Go Back</Button>
             </div>
             <div className="game-reviews">
                 <h3>Reviews</h3>

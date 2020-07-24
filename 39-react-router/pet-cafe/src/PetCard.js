@@ -9,7 +9,7 @@ const PetCard = props => {
             <img src={image} alt={name} />
             <h3>{name}</h3>
             <div>{isAdopted ? "In a Loving Home" : "Up for Adoption"}</div>
-            <button onClick={() => push(`/pets/${id}`)}>Visit Me!</button>
+            <button onClick={() => push(`${props.match.path}/${id}`)}>Visit Me!</button>
         </div>
     )
 }

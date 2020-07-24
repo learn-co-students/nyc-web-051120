@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './helpers/styles'
 
 class GameCard extends React.Component {
 
@@ -12,7 +13,7 @@ class GameCard extends React.Component {
                 <div>{minAge}+ years old</div>
                 <div>{minPlayers} - {maxPlayers} players</div>
                 <button onClick={() => updateLikes(id, likes)}>{likes}❤️</button>
-                <button onClick={() => selectGame(id)}>Select Game</button>
+                <Button borderColor="green" onClick={() => selectGame(id)}>Select Game</Button>
             </div>
         )
     }

@@ -27,7 +27,6 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/pets/:id" render={routerProps => <PetPage {...routerProps} pets={this.state.pets}/>}/>
           <Route path="/pets" render={(routerProps) => <PetIndex pets={this.state.pets} {...routerProps}/>}/>
           <Route path="/login" component={Auth}/> {/** routerProps automatically sentt to Auth component */}
           <Route path="/help">
