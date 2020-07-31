@@ -1,37 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SushiContainer from './containers/SushiContainer';
 import Table from './containers/Table';
+import { addMoneyAction, fetchSushisAction } from './actions'
 
 // Endpoint!
 const API = "http://localhost:3000/sushis"
 
 class App extends Component {
-  state = {
-    monies: 100,
-    newMoney: '0',
-    sushi: [], 
-    eatenSushi: []
-  }
+  state = { newMoney: '0' }
 
   componentDidMount(){
-    this.getSushi()
-  }
-  
-  getSushi = () => {
-    fetch(API)
-      .then(res => res.json())
-      .then(sushi => this.setState({ sushi })) 
-  }
-
-  eatSushi = (id, price) => {
-    if( !this.state.eatenSushi.includes(id) && price <= this.state.monies ){
-      this.setState(prevState => ({ 
-        eatenSushi: [ ...prevState.eatenSushi, id ],
-        monies: prevState.monies - price 
-      }))
-    } else {
-      alert('You either need mo monies or you already ate that one... weird')
-    }
+    this.props.fetchSushis()
   }
 
   handleChange = e => {
@@ -40,10 +20,8 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.setState(prevState => ({
-      monies: prevState.monies + parseInt(prevState.newMoney),
-      newMoney: '0' 
-    }))
+    this.props.addMoney(parseInt(this.state.newMoney)) // sends the dispatch to our reducer to update its state
+    this.setState({ newMoney: '0'}) // updates local state to control the form 
   }
 
   render() {
@@ -56,16 +34,18 @@ class App extends Component {
             <button type="submit">Submit</button>
           </label>
         </form>
-        <SushiContainer 
-          eat={this.eatSushi}
-          eatenSushi={this.state.eatenSushi}
-          sushi={this.state.sushi}/>
-        <Table 
-          monies={this.state.monies}
-          eatenSushi={this.state.eatenSushi}/>
+        <SushiContainer />
+        <Table />
       </div>
     );
   }
 }
 
-export default App;
+const mdp = dispatch => {
+  return {
+    addMoney: (amount) => dispatch(addMoneyAction(amount)),
+    fetchSushis: () => dispatch(fetchSushisAction())
+  }
+}
+
+export default connect(null, mdp)(App);

@@ -1,36 +1,33 @@
 import React, { Fragment, Component } from 'react'
 import MoreButton from '../components/MoreButton'
-import Sushi from '../components/Sushi'
+import Sushi from  '../components/Sushi'
+import { connect } from 'react-redux';
 
+const SushiContainer = props => {
+  let { startIndex, eatenSushi, sushis } = props
 
-class SushiContainer extends Component {
-  state = {
-    startIndex: 0
-  }
+  return (
+    <Fragment>
+      <div className="belt">
+        {sushis.slice(startIndex, startIndex + 4).map(sushi => (
+          <Sushi 
+            key={sushi.id} 
+            {...sushi} 
+            showImg={eatenSushi.includes(sushi.id)}
+            />
+        ))}
+        <MoreButton />
+      </div>
+    </Fragment>
+  )
+}
 
-  updateIndex = () => {
-    let newIndex = this.state.startIndex + 4 
-    this.setState({ startIndex: newIndex >= this.props.sushi.length ? 0 : newIndex })
-  }
-
-  render(){
-    let { startIndex } = this.state
-    return (
-      <Fragment>
-        <div className="belt">
-          {this.props.sushi.slice(startIndex, startIndex + 4).map(sushi => (
-            <Sushi 
-              key={sushi.id} 
-              {...sushi} 
-              showImg={this.props.eatenSushi.includes(sushi.id)}
-              eat={this.props.eat}/>
-          ))}
-          <MoreButton 
-            more={this.updateIndex}/>
-        </div>
-      </Fragment>
-    )
+const msp = state => {
+  return {
+    sushis: state.sushis,
+    eatenSushi: state.eatenSushi,
+    startIndex: state.startIndex
   }
 }
 
-export default SushiContainer
+export default connect(msp)(SushiContainer)

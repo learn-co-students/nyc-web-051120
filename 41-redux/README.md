@@ -27,7 +27,7 @@ Intro to Redux
 
 ### Redux-Thunk
 - [ ] Install the `redux-thunk` library
-- [ ] Use `applyMiddleware` from the redux library and `thunkMiddleware` from the redux-thunk library
+- [ ] Use `applyMiddleware` from the redux library and `thunk` from the redux-thunk library
 - [ ] Create action creators that return functions in order to dispatch asynchronously
 - [ ] Discuss best practices of action architecture when using thunk
 
@@ -131,6 +131,31 @@ Everytime `dispatch` is called, the `reducer` is called. The 1st argument is the
 ### Additional Resources
 - [Redux Thunk Walkthrough](https://alligator.io/redux/redux-thunk/)
 
+
+
+
+
+X App X
+  no State
+  addMoney action 
+  fetching all the sushis on app load 
+
+        X SushiContainer X
+          sushis & eatenSushis & startIndex
+          no Dispatch
+
+                X Sushi(s) X
+                  no State
+                  eat action
+
+                X MoreButton X
+                  no State
+                  more action 
+
+
+        X Table X
+          monies & eatenSushi
+          no Dispatch
 
 
 

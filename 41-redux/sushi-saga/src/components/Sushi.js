@@ -1,18 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { eatSushiAction } from '../actions'
 
-const Sushi = (props) => {
-  let { id, name, price, img_url, eat, showImg } = props;
-
+const Sushi = ({ id, name, price, img_url, eat, showImg }) => {
   return (
     <div className="sushi">
       <div className="plate" 
           onClick={() => eat(id, price)}>
-        { 
-          showImg ? 
-            null
-          :
-            <img src={img_url} width="100%" />
-        }
+        { !showImg && <img src={img_url} width="100%" /> }
       </div>
       <h4 className="sushi-details">
         {name} - ${price}
@@ -21,4 +16,10 @@ const Sushi = (props) => {
   )
 }
 
-export default Sushi
+const mdp = dispatch => {
+  return {
+    eat: (id, price) => dispatch(eatSushiAction(id, price)) 
+  }
+}
+
+export default connect(null, mdp)(Sushi)
